@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="router">
     <h1>Welcome</h1>
     <p>
       <h4>老师的Github</h4>

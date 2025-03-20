@@ -23,7 +23,7 @@ body {
 #sidebar {
   width: 300px;
   border: 1px solid red;
-  padding: 15px;
+  padding: 10px;
 }
 #router {
   border: 1px solid red;

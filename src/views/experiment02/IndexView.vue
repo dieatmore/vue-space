@@ -1,56 +1,50 @@
+<script setup lang="ts">
+import { ref, watch } from 'vue'
+import { listCourses, type Course } from './services'
+const coursesR = ref(listCourses().sort((a, b) => a.term - b.term))
+const selectCoursesR = ref<Course[]>([])
+const pointTarget = 17.5
+const pointR = ref(0)
+watch(selectCoursesR, () => {
+  //选择课程更新后，学分从零开始计算，选择的课程重新排序
+  pointR.value = 0
+  for (const c of selectCoursesR.value) {
+    pointR.value += c.point
+  }
+  selectCoursesR.value.sort((a, b) => a.term - b.term)
+})
+</script>
 <template>
-  <div>
-    <h1>Experiment</h1>
-    <p>专业选修课学分计算</p>
-    <p style="font-weight: bold">
-      <span :style="{ color: pointR >= requiredPoint ? 'green' : 'red' }">
+  <div id="router">
+    <h1>实验二 Vue双向绑定实验</h1>
+    <div id="point">
+      <span :style="{ color: pointR <= pointTarget ? 'red' : 'green' }">
         {{ pointR }}
       </span>
-      /{{ requiredPoint }}学分
-    </p>
-    <div class="course">
+      /{{ pointTarget }}学分
+    </div>
+    <div id="courses">
       <template v-for="(c, index) of coursesR" :key="index">
         <label>
-          <input type="checkbox" v-model="selectedCoursesR" :value="c" />
-          {{ c.term }}学期 / {{ c.point }}学分 / {{ c.name }}
+          <input type="checkbox" v-model="selectCoursesR" :value="c" />
+          {{ c.name }}-{{ c.point }}({{ c.term }})
+          <br />
         </label>
-        <br />
       </template>
     </div>
-    <div class="course">
-      <template v-for="(c, index) of selectedCoursesR" :key="index">
-        {{ c.term }}学期 / {{ c.point }}学分 / {{ c.name }}
+    <div id="courses2">
+      <template v-for="(c, index) of selectCoursesR" :key="index">
+        {{ c.name }}-{{ c.point }}({{ c.term }})
         <br />
       </template>
-    </div>
-    <div>
-      <button @click="clearSelectedF">Reset</button>
     </div>
   </div>
 </template>
-<script lang="ts" setup>
-import { ref, watch } from 'vue'
-import { listCourses, type Course } from './services'
-
-const requiredPoint = 12
-const pointR = ref(0)
-const c2 = listCourses().sort((a, b) => a.term - b.term)
-const coursesR = ref<Course[]>(c2)
-const selectedCoursesR = ref<Course[]>([])
-const clearSelectedF = () => (selectedCoursesR.value.length = 0)
-watch(selectedCoursesR, () => {
-  pointR.value = 0
-  selectedCoursesR.value.forEach(c => {
-    pointR.value += c.point
-  })
-  selectedCoursesR.value.sort((a, b) => a.term - b.term)
-})
-</script>
 <style scoped>
-.course {
-  border: 1px solid red;
-  padding: 5px;
+#courses,
+#courses2 {
   display: inline-block;
+  border: 1px solid red;
   vertical-align: top;
 }
 </style>

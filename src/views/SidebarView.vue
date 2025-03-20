@@ -1,10 +1,10 @@
 <script setup lang="ts"></script>
 <template>
-  <div>
+  <div id="sidebar">
     <h3>Examples</h3>
     <ul>
       <li>
-        <router-link to="/example01">尝试</router-link>
+        <router-link to="/example01">Welcome</router-link>
       </li>
     </ul>
     <h3>Experiments</h3>
@@ -15,3 +15,8 @@
     </ul>
   </div>
 </template>
+<style scoped>
+* {
+  margin: 0;
+}
+</style>
