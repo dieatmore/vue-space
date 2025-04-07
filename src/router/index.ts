@@ -11,11 +11,11 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/homework01',
-    component: () => import('@/views/homework01/Homework01.vue')
+    component: () => import('@/views/homework01/IndexView.vue')
   },
   {
     path: '/homework02',
-    component: () => import('@/views/homework02/Homework02.vue')
+    component: () => import('@/views/homework02/IndexView.vue')
   }
 ]
 
