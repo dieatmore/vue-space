@@ -15,10 +15,10 @@ watch(selectCoursesR, () => {
 })
 </script>
 <template>
-  <div id="router">
+  <div>
     <h1>实验二 Vue双向绑定实验</h1>
     <div id="point">
-      <span :style="{ color: pointR <= pointTarget ? 'red' : 'green' }">
+      <span :style="{ color: pointR < pointTarget ? 'red' : 'green' }">
         {{ pointR }}
       </span>
       /{{ pointTarget }}学分
