@@ -3,13 +3,14 @@ import { ref, watch } from 'vue'
 import { listDepartmentsService, listTeachersService } from './services'
 import type { Department, Teacher } from './type'
 const departments = await listDepartmentsService()
-const teacherR = defineModel<Teacher>('selectteacher')
+const select = defineModel<Teacher>('selectteacher')
 const departmentR = ref<Department>()
 const teachersR = ref<Teacher[]>([])
 const selected = ref(false)
 watch(departmentR, async () => {
   selected.value = true
-  teacherR.value = {}
+  //清除记录
+  select.value = {}
   teachersR.value = []
   departmentR.value?.id && (teachersR.value = await listTeachersService(departmentR.value.id))
 })
@@ -22,7 +23,7 @@ watch(departmentR, async () => {
         {{ department.name }}
       </option>
     </select>
-    <select v-if="selected" v-model="teacherR">
+    <select v-if="selected" v-model="select">
       <option v-for="(teacher, index) of teachersR" :key="index" :value="teacher">
         {{ teacher.name }}
       </option>
