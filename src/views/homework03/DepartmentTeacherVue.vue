@@ -17,6 +17,7 @@ watch(departmentR, async () => {
 <template>
   <div>
     <select style="margin-right: 10px" v-model="departmentR">
+      <option></option>
       <option v-for="(department, index) of departments" :key="index" :value="department">
         {{ department.name }}
       </option>
