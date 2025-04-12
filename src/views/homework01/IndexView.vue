@@ -19,12 +19,14 @@ const indexR = ref(0)
 const styleR = ref<{}[]>([])
 const componentR = ref()
 //watch实现
+const newStyle = { color: 'red', 'text-decoration': 'underline' }
+const oldStyle = { color: 'black', 'text-decoration': 'none' }
 watch(indexR, () => {
   components.forEach((c, index) => {
     if (index == indexR.value) {
-      styleR.value[index] = { color: 'red', 'text-decoration': 'underline' }
+      styleR.value[index] = newStyle
       componentR.value = components[indexR.value]?.component
-    } else styleR.value[index] = { color: 'black', 'text-decoration': 'none' }
+    } else styleR.value[index] = oldStyle
   })
 })
 </script>
