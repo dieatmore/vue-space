@@ -25,6 +25,10 @@
       <li>
         <router-link to="/homework02">Homework02 - CheckBox双向互交绑定</router-link>
       </li>
+      <br />
+      <li>
+        <router-link to="/homework03">Homework03 - 封装暴露组件数据对象</router-link>
+      </li>
     </ul>
     <br />
     <br />
