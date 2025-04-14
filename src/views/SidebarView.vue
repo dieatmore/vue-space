@@ -29,6 +29,10 @@
       <li>
         <router-link to="/homework03">Homework03 - 封装暴露组件数据对象</router-link>
       </li>
+      <br />
+      <li>
+        <router-link to="/homework04">Homework04 - Slot插槽</router-link>
+      </li>
     </ul>
     <br />
     <br />
@@ -44,5 +48,8 @@
 <style scoped>
 * {
   margin: 0;
+}
+a {
+  text-decoration: none;
 }
 </style>
