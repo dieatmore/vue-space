@@ -15,7 +15,7 @@ const components: { name: string; component: Component }[] = [
   }
 ]
 
-const indexR = ref(0)
+const indexR = ref(3)
 const styleR = ref<{}[]>([])
 const componentR = ref()
 //watch实现

@@ -9,14 +9,8 @@
     <br />
     <br />
 
-    <h3>Examples</h3>
-    <ul>
-      <li></li>
-    </ul>
-    <br />
-    <br />
-
     <h3>Homeworks</h3>
+    <br />
     <ul>
       <li>
         <router-link to="/homework01">Homework01 - 组件动态切换</router-link>
@@ -38,9 +32,10 @@
     <br />
 
     <h3>Experiments</h3>
+    <br />
     <ul>
       <li>
-        <router-link to="/experiment02">Experiment02 - Vue双向绑定实验</router-link>
+        <router-link to="/experiment02">Experiment01 - Vue双向绑定实验</router-link>
       </li>
     </ul>
   </div>
