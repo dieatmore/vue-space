@@ -35,7 +35,11 @@
     <br />
     <ul>
       <li>
-        <router-link to="/experiment02">Experiment01 - Vue双向绑定实验</router-link>
+        <router-link to="/experiment02">Experiment02 - Vue双向绑定实验</router-link>
+      </li>
+      <br />
+      <li>
+        <router-link to="/experiment03">Experiment03 - 单一数据源实验</router-link>
       </li>
     </ul>
   </div>

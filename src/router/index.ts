@@ -24,6 +24,32 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/homework04',
     component: () => import('@/views/homework04/IndexView.vue')
+  },
+  {
+    path: '/experiment03',
+    component: () => import('@/views/experiment03/IndexView.vue'),
+    children: [
+      {
+        path: '/experiment03/orders',
+        component: () => import('@/views/experiment03/OrderView.vue')
+      },
+      {
+        path: '/experiment03/shoplist',
+        component: () => import('@/views/experiment03/ShopListView.vue')
+      },
+      {
+        path: '/experiment03/location',
+        component: () => import('@/views/experiment03/LocationView.vue')
+      },
+      {
+        path: '/experiment03/run',
+        component: () => import('@/views/experiment03/RunView.vue')
+      },
+      {
+        path: '/experiment03/shop/:sid',
+        component: () => import('@/views/experiment03/ShopView.vue')
+      }
+    ]
   }
 ]
 
