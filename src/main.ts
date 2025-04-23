@@ -1,4 +1,3 @@
-import { createAlertDialog } from '@/components/message'
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -13,8 +12,8 @@ app.mount('#app')
 
 // 全局未捕获异常处理
 // 统一弹出错误信息模态框
-app.config.errorHandler = err => {
-  const message = err as string
-  console.error(message)
-  createAlertDialog(message)
-}
+// app.config.errorHandler = err => {
+//   const message = err as string
+//   console.error(message)
+//   createAlertDialog(message)
+// }

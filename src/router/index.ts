@@ -50,6 +50,10 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/views/experiment03/ShopView.vue')
       }
     ]
+  },
+  {
+    path: '/homework05',
+    component: () => import('@/views/homework05/IndexView.vue')
   }
 ]
 

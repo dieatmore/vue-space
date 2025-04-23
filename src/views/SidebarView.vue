@@ -27,6 +27,10 @@
       <li>
         <router-link to="/homework04">Homework04 - Slot插槽</router-link>
       </li>
+      <br />
+      <li>
+        <router-link to="/homework05">Homework05 - 函数式全屏Loading遮罩组件</router-link>
+      </li>
     </ul>
     <br />
     <br />

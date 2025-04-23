@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { shallowRef } from 'vue'
 import type { Shop } from './data/homework02'
 import { listShopsService } from './service'
-const shoplistR = ref<Shop[]>([])
+const shoplistR = shallowRef<Shop[]>([])
 listShopsService().then(s => (shoplistR.value = s.value))
 </script>
 <template>

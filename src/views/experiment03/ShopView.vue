@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { shallowRef } from 'vue'
 import { useRoute } from 'vue-router'
 import type { Item, Shop } from './data/homework02'
 import { getOrdersService, getShopService } from './service'
-const shopR = ref<Shop>()
+const shopR = shallowRef<Shop>()
 const params = useRoute().params
 getShopService(params.sid as string).then(s => (shopR.value = s))
 const orders = getOrdersService()
